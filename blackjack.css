@@ -1,0 +1,51 @@
+ body{
+            background-color: black;/*#cc00cc;*/
+}
+            
+.mainClass{
+            color: aqua;/*#99ccff;*/
+            font-family: impact,serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 250%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+}
+            
+.cards{
+            color: #ff7519;
+            font-style: normal;
+}
+
+h1{
+            color: white;
+            font-size: 250%;
+            /*margin-left: 42%;*/
+            
+            
+}
+
+#uitleg{
+            margin-left: 35%;
+            margin-right: 0%;
+            color: white;
+            
+}
+
+.span{
+            float: left;
+            width: 100%;
+            font-size: 120%;
+            font-weight: bold;
+}
+p{
+            clear: left;
+            width: 50%;
+            font-size: 120%;
+            color: white;
+}
+
+#buttons{
+            margin-left: 45%;
+}

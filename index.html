@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" />
+
+
+		<title>index blackjack game</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Steven" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="js/jquery-1.12.1.js"></script>
+        <script src="js/jquery-1.12.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+		<link rel="stylesheet" href="blackjack.css">
+        
+        <script type="text/javascript">
+        $(document).ready(function() {
+    
+        $("#buttonUitleg").click(function() {
+  
+            var lable = $("#buttonUitleg").text().trim();
+
+           
+            
+            if(lable == "hide") {
+              $("#buttonUitleg").text("show");
+              $("#uitleg").hide();
+            }
+            else {
+              $(".buttonUitleg").text("hide");
+              $("#uitleg").show();
+            }
+    
+  });
+
+            
+            
+            
+            
+            
+        });
+        
+        
+        </script>
+        
+        
+	</head>
+
+	<body>
+        
+        <div id="uitleg">
+		<h1>BLACKJACK</h1>
+                
+        <p><span class="span">delen:</span>
+                 je ontvangt twee kaarten van de dealer en de dealer deelt een kaart aan zichzelf
+            
+            <span class="span">beslissen:</span>
+              Nu volgt een beslissingsmoment. Je kunt passen of een kaart bijvragen om zo dicht mogelijk in de buurt van de 21 te komen. Heb je direct een Aas en een kaart met waarde 10 ontvangen? Dan heb je Black Jack! In principe krijg je dan anderhalf keer je inzet uitbetaald, tenzij de dealer een kaart met waarde 10 heeft. In dat geval trekt de dealer voor zichzelf een kaart bij. Trekt de dealer een Aas (Black Jack) dan is er een gelijk spel ontstaan en krijg je alleen de inzet terug.
+
+            
+            <span class="span">de dealer speelt:</span>
+                   Als je geen spelbeslissingen meer kunt nemen (bijvoorbeeld na passen) en je hebt niet meer dan 21 punten, dan gaat de dealer spelen. De dealer blijft een kaart nemen totdat een minimum van 17 punten is bereikt of de dealer de 21 punten heeft overschreden.
+        
+        
+        
+        </p>
+       
+        </div>
+		
+        <div id="buttons">
+        <button id="buttonUitleg">hide</button>
+        <a href="blackjack%201.0.html"><button id="buttonNaarSpel">naar spel</button></a>
+        </div>
+	</body>
+</html>
