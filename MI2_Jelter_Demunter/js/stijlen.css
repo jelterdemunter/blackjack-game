@@ -1,0 +1,92 @@
+
+.levens {  
+            z-index: 1;
+            position: absolute;
+            top: 1%;
+            left: 90%;
+            font-size: 25px;
+                
+}
+
+.score {
+            z-index: 1;
+            position: absolute;
+            top: 4%;
+            left: 90%;
+            font-size: 25px;
+                
+}
+
+
+
+
+
+#Eindscherm {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;  
+}
+
+#highscores {
+            
+            position: absolute;
+            left: 35%;
+            top: 40%;
+            background-color: black;
+            opacity: 0.5;
+            color: aqua;
+            border-style: double;   
+            font-size: 50px;
+            padding-bottom: 60px;
+}
+
+td {
+            padding-left: 75px;
+            padding-right: 75px;
+            font-family: fantasy;
+            font-size: 20px;
+            color: aqua;
+            border: none;
+}
+
+
+
+#opnieuw {
+            position: absolute;
+            top: 80%;
+            left: 80%;
+            background-color: aqua;
+            border-style: dotted;
+            border-color: blue;
+            font-family: fantasy;
+            font-size: 25px;
+}
+.cirkel {
+    border-radius: 50%;
+    margin-right: 20px;
+     z-index: 0;
+    position: relative;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -webkit-user-drag: none;     
+}
+
+#cirkel {
+    width: 55px;
+    height: 55px;
+    background: #EA7317;
+     z-index: 0;
+    position: relative;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -webkit-user-drag: none;     
+}
+
