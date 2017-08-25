@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		
+		<meta charset="utf-8">
+
+		<title>beginscherm</title>
+		<meta name="description" content="">
+		<meta name="author" content="Jelter">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="js/stijlen.css">
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css">
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+		<style>
+			#errormessage {
+				color: red;
+			}
+		</style>
+
+		<script>
+			$(document).ready(function() {
+				var loaded = false;
+				
+
+				//Login pagina
+
+				$("#errormessage").hide();/*error bericht verbergen*/
+
+				$("#loginbutton").on("click", function() {
+					var naam = $("#naam").val();
+					var passwoord = $("#password").val();
+
+					if (naam == "spel" && passwoord == "spelen") {
+						$("#errormessage").hide();
+						window.location.assign("#pageOverzicht");/*als de combinatie juist is gaan we naar de id pageOverzicht*/
+						event.preventDefault();
+					} else {
+						$("#errormessage").show();/*de combinatie is fout dus gaan we het error bericht weergeven*/
+					}
+				});
+
+
+                $('#spel').click(function(e) {
+                    window.location ="game.html";/* een functie om naar de pagina game.html te gaan*/
+
+                });
+                
+                
+                
+            
+                
+                
+                
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div data-role="page" id="page1">
+
+			<div data-role="header">
+				<h1>Login</h1>
+			</div><!-- /header -->
+
+			<div data-role="content">
+
+				<div data-role="fieldcontain">
+					<label for="naam">Naam:</label>
+					<input type="text" name="naam" id="naam">
+				</div>
+				<div data-role="fieldcontain">
+					<label for="password">Password:</label>
+					<input type="password" name="password" id="password" autocomplete="off">
+				</div>
+
+				<div id="errormessage">
+					Foute combinatie!
+				</div>
+
+				<button type="submit" id="loginbutton">
+					Login
+				</button>
+			</div>
+
+			<div data-role="footer">
+				<h4>naam: spel / wachtwoord: spelen</h4>
+			</div>
+		</div>
+
+		<div data-role="page" id="pageOverzicht">
+
+			<div data-role="header">
+				<h1>Overzicht</h1>
+			</div>
+
+			<div data-role="content">
+				<div id="overzicht">
+					<div>
+						<h1>Jelter Demunter</h1>
+						<p>
+							r0581665
+						</p>
+                        <p>
+                            de bedoeling van het spel is om op zoveel mogelijk ballen te klikken voor de tijd op is. je hebt opties voor de moeilijkheid van het spel. je kan de ballen verschillende kleuren geven. 
+                        </p>
+					</div>
+					<div>
+						<button id="spel">
+							naar spel
+						</button>
+					</div>
+
+					
+
+				</div>
+			</div>
+
+			<div data-role="footer">
+				<a href="#page1" class="ui-btn">uitloggen</a>
+				
+			</div>
+
+		</div>
+        
+        
+        
+        
+        
+        
+        
+
+
+	</body>
+</html>

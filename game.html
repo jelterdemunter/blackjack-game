@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Raindrops - game</title>
+    <link rel="stylesheet" href="js/stijlen.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>  
+    
+    
+    <script src="main.js"></script>
+</head>
+<body>  
+    <div id="spel"></div>
+    
+    
+    <div class="score"><p>Score : <span> 0 </span></p></div>
+    
+    
+    <div class="levens"><p>Levens: <span>6</span> </p></div>  
+    
+    <script> 
+    
+    $(document).ready(function(e) {
+        var tellen = 0;
+        var levens = 3;
+        var score = 0;    
+        //var moeilijkheidsgraad = localStorage.getItem('moeilijkheid');
+           
+        setInterval(AddDiv, 700);
+        
+        function AddDiv(){
+            //console.log("x");
+            tellen++;/*is later nodig omervoor te zorgen dat er meerdere objecten gemaakt kunnen worden*/
+            var snelheid;
+            
+          
+            snelheid = Math.floor((Math.random() * 4000) + 2500);
+                      
+            let coördinaten = Math.floor((Math.random() * ($(document).width() - 300) ) + 1);
+            //hier word het object aangemaakt
+            let Obj = {
+                aantal: tellen,
+                plaats: coördinaten
+            }       
+            
+            $(".score span").html(" " + score);
+            $(".levens span").html(" " + levens);
+            
+            
+            /*de div met id spel wordt opgevuld met de cirkel die aangemaakt is in de css*/
+           
+            $("#spel").prepend('<div unselectable="on"  id="cirkel"' + Obj.aantal + '" class="cirkel" draggable="false"></div>');
+            
+            $('#cirkel' + Obj.aantal).css('left', Obj.plaats);
+            
+            var hoogte = "+=" + ($(window).height() - $("#cirkel" + Obj.aantal).height() - 200);
+            
+            $('#cirkel' + Obj.aantal).animate({  
+                top: hoogte
+            }, snelheid, function(){
+           
+                $('#cirkel' + Obj.aantal).hide();                
+                
+                if($("#cirkel" + Obj.aantal).is(':hidden')){
+                    levens = levens - 1;
+                }       
+                
+                if (levens <= 0){
+                window.location.replace("Eindscherm.html");
+                localStorage.setItem('spel','verloren');
+                }
+                
+            });
+            
+            $("#cirkel" + Obj.aantal).on('click', function(){
+                
+                $(this).remove();
+               
+                score = score +50;
+            })   
+                  
+            if(score >= 200)
+            {
+                window.location.replace("Eindscherm.html");
+             
+                localStorage.setItem('spel','gewonnen');
+            }
+            
+           
+            localStorage.setItem('resultaat',score);      
+        }   
+    });  
+    </script>
+    
+</body>
+</html>
